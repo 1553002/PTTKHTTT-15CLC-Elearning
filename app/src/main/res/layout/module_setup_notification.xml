@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:textSize="@dimen/setup_title_font_size"
+        android:text="@string/title_setup_notification"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_weight="1"
+            android:text="@string/title_reminder_practice"/>
+
+        <Switch
+            android:id="@+id/switch_practice_reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:gravity="center_vertical"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ln_setup_time"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:text="@string/title_reminder_time"/>
+
+        <TextView
+            android:id="@+id/tw_practice_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:text="5 : 00 PM"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ln_setup_days"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="2dp"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:text="@string/title_reminder_days"/>
+
+        <TableLayout
+            android:layout_above="@+id/save_alarm_btn"
+            android:stretchColumns="*"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:id="@+id/listcheckname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/details_sunday"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/details_monday"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/details_tuesday"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/details_wednesday"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/details_thursday"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/details_friday"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/details_saturday"
+                    android:textSize="16dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/listcheck"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:layout_gravity="center"
+                    android:id="@+id/alarm_details_repeat_sunday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true" />
+
+                <CheckBox
+                    android:layout_gravity="center"
+                    android:id="@+id/alarm_details_repeat_monday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true" />
+
+
+                <CheckBox
+                    android:layout_gravity="center"
+                    android:id="@+id/alarm_details_repeat_tuesday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true" />
+
+                <CheckBox
+                    android:layout_gravity="center"
+                    android:id="@+id/alarm_details_repeat_wednesday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true" />
+
+                <CheckBox
+                    android:layout_gravity="center"
+                    android:id="@+id/alarm_details_repeat_thursday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true" />
+
+                <CheckBox
+                    android:layout_gravity="center"
+                    android:id="@+id/alarm_details_repeat_friday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true" />
+
+                <CheckBox
+                    android:layout_gravity="center"
+                    android:id="@+id/alarm_details_repeat_saturday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

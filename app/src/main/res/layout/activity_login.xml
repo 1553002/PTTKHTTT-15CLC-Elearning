@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.congcanh.elearningproject.activity.LoginActivity">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/login_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/login_background"
+        android:src="@drawable/login_background" />
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="30px"
+        android:textAlignment="center"
+        android:gravity="center_horizontal">
+
+        <ru.dimorinny.floatingtextbutton.FloatingTextButton
+            android:id="@+id/facebook_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radius_button"
+            app:floating_background_color="#3b5998"
+            app:floating_left_icon="@drawable/fb_ico"
+            app:floating_title="FACEBOOK"
+            app:floating_title_color="@android:color/white" />
+
+        <ru.dimorinny.floatingtextbutton.FloatingTextButton
+            android:id="@+id/google_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radius_button"
+            android:layout_marginLeft="40px"
+            app:floating_background_color="@android:color/white"
+            app:floating_left_icon="@drawable/google_ico"
+            app:floating_title="GOOGLE"
+            app:floating_title_color="@android:color/black" />
+
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>

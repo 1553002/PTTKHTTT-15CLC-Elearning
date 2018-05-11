@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.example.congcanh.elearningproject"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE-FIREBASE.txt'
+        exclude 'META-INF/NOTICE'
+
+    }
+}
+
+configurations.all {
+    resolutionStrategy {
+        force 'com.android.support:support-annotations:23.1.1'
+    }
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    compile 'com.android.support:multidex:1.0.1'
+
+    // ...
+    implementation 'com.firebaseui:firebase-ui-auth:3.3.0'
+    // FirebaseUI for Cloud Firestore
+    implementation 'com.firebaseui:firebase-ui-firestore:3.3.0'
+    // FirebaseUI for Firebase Realtime Database
+    implementation 'com.firebaseui:firebase-ui-database:3.3.0'
+    // FirebaseUI for Cloud Storage
+    compile 'com.firebaseui:firebase-ui-storage:3.3.0'
+    compile 'com.google.firebase:firebase-core:12.0.1'
+    compile 'com.google.firebase:firebase-auth:12.0.1'
+    implementation 'com.facebook.android:facebook-login:[4,5)'
+    compile 'com.google.android.gms:play-services-auth:12.0.1'
+    //gif image libary
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.12'
+    //    https://github.com/dimorinny/floating-text-button
+    compile 'com.github.dimorinny:floating-text-button:0.0.4'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    // glide image library
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+}
+
+// Add to the bottom of the file
+apply plugin: 'com.google.gms.google-services'

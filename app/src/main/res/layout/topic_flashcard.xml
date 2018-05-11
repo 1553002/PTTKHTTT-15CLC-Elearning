@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        app:cardBackgroundColor="@color/grey_300"
+        style="@style/AppTheme.CardViewStyle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="@android:color/white">
+
+                <TextView
+                    android:id="@+id/topic_tilte"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:textColor="@color/light_blue_900"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/topic_description"
+                    android:textSize="14sp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/gray_333"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+                <ProgressBar
+                    android:id="@+id/topic_process"
+                    android:layout_width="match_parent"
+                    android:layout_height="18dp"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:progressBackgroundTint="@color/grey_300"
+                    android:progressTint="@color/amber_500"
+                    android:max="3"
+                    android:progress="1"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/btn_quiz"
+                android:text="Study this section ..."
+                android:textAllCaps="false"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textColor="#424242"
+                android:background="@color/transparent"/>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

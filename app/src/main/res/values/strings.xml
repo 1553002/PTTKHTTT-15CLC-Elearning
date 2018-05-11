@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">ELearning</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <string name="facebook_application_id">981375618687253</string>
+    <string name="fb_login_protocol_scheme">fb981375618687253</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Học</string>
+    <string name="title_marked_word">Từ đánh dấu</string>
+    <string name="title_statistic">Thống kê</string>
+    <string name="title_setting">Thiết lập</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nav_home">Learn</string>
+    <string name="nav_marked">Saved words</string>
+    <string name="nav_statistic">Thống kê</string>
+    <string name="nav_setting">Setting</string>
+    <string name="title_setup_notification">Notifications</string>
+    <string name="title_setup_target">Daily Goal</string>
+    <string name="title_contact">Send Feedback</string>
+    <string name="title_signout">Sign Out</string>
+    <string name="topic_progress_pattern">%1$d of %2$d levels completed</string>
+    <string name="choose_lesson_title">Choose lesson...</string>
+    <string name="title_reminder_practice">Practice reminder</string>
+    <string name="title_reminder_time">Reminder time</string>
+    <string name="title_reminder_days">Reminder day</string>
+    <string name="title_activity_quiz">QuizActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="answer_hint">Enter your answer</string>
+    <string name="check">Check</string>
+
+    <string name="details_sunday">CN</string>
+    <string name="details_monday">2</string>
+    <string name="details_tuesday">3</string>
+    <string name="details_wednesday">4</string>
+    <string name="details_thursday">5</string>
+    <string name="details_friday">6</string>
+    <string name="details_saturday">7</string>
+
+    <string name="exit">Do you really want to exit?</string>
+    <string name="exit_confirm">all progress in this lesson will be lost</string>
+</resources>

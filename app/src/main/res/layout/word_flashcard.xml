@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView android:id="@+id/cw_word_flashcard"
+    app:cardBackgroundColor="@android:color/background_light"
+    android:layout_marginLeft="60dp"
+    android:layout_marginRight="60dp"
+    android:layout_marginTop="30dp"
+    app:cardCornerRadius="@dimen/activity_horizontal_margin"
+    app:cardElevation="10dp"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <RelativeLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+
+            <!--<ImageButton-->
+            <!--android:id="@+id/btnpronounce"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginRight="8dp"-->
+            <!--android:layout_marginTop="49dp"-->
+            <!--android:background="@drawable/ic_pronunciation_audio"-->
+            <!--app:layout_constraintBottom_toTopOf="@+id/spellswitcher"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toEndOf="@+id/wordswitcher"-->
+            <!--app:layout_constraintTop_toTopOf="parent" />-->
+            <TextView
+                android:id="@+id/wordswitcher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="15dp"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:text="/apple/" />
+
+            <TextView
+                android:id="@+id/spellswitcher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="14dp"
+                android:text="/apple/"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/wordswitcher"
+                />
+
+            <!--<ScrollView-->
+            <!--android:id="@+id/scrollView2"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="117dp"-->
+            <!--android:layout_marginBottom="20dp"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/imageSwitcher">-->
+
+            <!--<TextSwitcher-->
+            <!--android:id="@+id/defineswitcher"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
+            <!--</ScrollView>-->
+
+
+            <ImageView
+                android:id="@+id/imageSwitcher"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/person_flat"
+                android:layout_below="@+id/spellswitcher"/>
+
+            <TextView
+                android:id="@+id/meaningSwitcher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:text="Quả táo"
+                android:layout_below="@id/imageSwitcher"/>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/word_flashcard"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cw_word_flashcard"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal">
+
+        <Button
+        android:id="@+id/btn_mark_it"
+        android:background="@drawable/button_nobackground_amberborder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textAllCaps="false"
+        android:textColor="@color/amber_500"
+        android:text="Mark it"
+        android:layout_below="@+id/cw_word_flashcard"/>
+
+        <Button
+            android:id="@+id/btn_cancle_mark_it"
+            android:background="@drawable/button_background_amberborder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:text="Cancle mark it"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/btn_know_it"
+            android:background="@drawable/button_nobackground_blueborder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/colorPrimary"
+            android:text="I know it"
+            android:layout_below="@+id/cw_word_flashcard"/>
+    </LinearLayout>
+
+</RelativeLayout>
