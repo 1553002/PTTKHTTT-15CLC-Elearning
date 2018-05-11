@@ -20,6 +20,9 @@ public interface HomeFragmentVP {
 
     interface Presenter{
         void loadDataToShow(TopicAdapter adapter);
+
+        void loadDataToShow(TopicAdapter adapter, Context context);
+
         void getDataLevel(final String topic, final String level, final HomeFragmentPresenter.Callback callback);
 
         int getGoal(Context context);

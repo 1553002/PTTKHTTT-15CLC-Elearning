@@ -3,6 +3,7 @@ package com.example.congcanh.elearningproject.presenter;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
+import android.widget.Toast;
 
 
 import com.example.congcanh.elearningproject.adapter.TopicAdapter;
@@ -32,8 +33,8 @@ public class HomeFragmentPresenter implements HomeFragmentVP.Presenter {
     private HomeFragmentVP.View homeView;
     private FirebaseUser currentUser;
     private FirebaseDatabase db;
+    private int curNumberLevel;
 
-    int curNumberLevel=0;
     public HomeFragmentPresenter(HomeFragmentVP.View v){
         this.homeView = v;
         db = FirebaseDatabase.getInstance();
@@ -43,7 +44,6 @@ public class HomeFragmentPresenter implements HomeFragmentVP.Presenter {
     public interface Callback {
         void act(List<WordEntity> models);
     }
-
 
 
     @Override
@@ -65,9 +65,48 @@ public class HomeFragmentPresenter implements HomeFragmentVP.Presenter {
                             topic_entry.getKey(), Integer.parseInt(topic_entry.child("current_level").getValue().toString()));
 
                     list_topics.add(topicEntity);
-                    curNumberLevel=curNumberLevel+topicEntity.getCurrent_level();
+                    curNumberLevel=curNumberLevel+1;
+                    //curNumberLevel=curNumberLevel+Integer.parseInt(topic_entry.child("current_level").getValue().toString());
                 }
 
+                adapter.setTopicAdapterData(list_topics);
+                homeView.hideBLoadingView();
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    @Override
+    public void loadDataToShow(final TopicAdapter adapter, final  Context context){
+        homeView.showBLoadingView();
+        DatabaseReference topics = db.getReference("users")
+                .child(currentUser.getUid())
+                .child("process");;
+
+        topics.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                final ArrayList<TopicEntity> list_topics = new ArrayList<>();
+
+                curNumberLevel=0;
+                for (DataSnapshot topic_entry : dataSnapshot.getChildren())
+                {
+                    TopicEntity topicEntity = new TopicEntity(topic_entry.child("name").getValue().toString(),
+                            topic_entry.getKey(), Integer.parseInt(topic_entry.child("current_level").getValue().toString()));
+
+                    list_topics.add(topicEntity);
+                    curNumberLevel=curNumberLevel+Integer.parseInt(topic_entry.child("current_level").getValue().toString());
+                    //curNumberLevel=curNumberLevel+Integer.parseInt(topic_entry.child("current_level").getValue().toString());
+                }
+                SharedPreferences.Editor editor =context.getSharedPreferences("pref",MODE_PRIVATE).edit();
+                editor.putInt("curLevel",curNumberLevel);
+                editor.commit();
+                //Toast.makeText(context, Integer.toString(curNumberLevel),Toast.LENGTH_SHORT).show();
                 adapter.setTopicAdapterData(list_topics);
                 homeView.hideBLoadingView();
 
@@ -116,6 +155,7 @@ public class HomeFragmentPresenter implements HomeFragmentVP.Presenter {
         SharedPreferences myPref= context.getSharedPreferences("pref", MODE_PRIVATE);
         SharedPreferences.Editor editor=myPref.edit();
         int goal=myPref.getInt("goal",1);  // lay ngay cuoi luu trong app
+
         return goal;
     }
     @Override
@@ -124,7 +164,8 @@ public class HomeFragmentPresenter implements HomeFragmentVP.Presenter {
         SharedPreferences.Editor editor =context.getSharedPreferences("pref",MODE_PRIVATE).edit();
         editor.putInt("curLevel",curNumberLevel);
         editor.commit();
-        return  curNumberLevel;
+        Toast.makeText(context, Integer.toString(curNumberLevel),Toast.LENGTH_SHORT).show();
+        return  this.curNumberLevel;
     }
 
 }

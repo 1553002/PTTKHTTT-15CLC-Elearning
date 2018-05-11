@@ -44,9 +44,11 @@ public class GoalFragment extends BaseFragment implements GoalFragmentVP.View, B
 
 
     String[] decription = new String[]{
-        "Bạn chưa học xong Level"+"\n"+" nào hôm nay!"+"\n"+" Đi Học Ngay!",
+            "Bạn chưa học xong Level"+"\n"+" nào hôm nay!"+"\n"+" Đi Học Ngay!",
             "Bạn học còn ít quá!" +"\n"+" Học Nhiều Vào!",
-            "Đạt chỉ tiêu rồi!"+"\n"+" Bạn Chăm Quá!"
+            "Gần đạt chỉ tiêu rồi!"+"\n"+" Cố lên bạn ơi!",
+            "Đạt chỉ tiêu rồi!"+"\n"+" Bạn Chăm Quá!",
+            "Chưa đủ đâu!"+"\n"+" Học tiếp đi bạn!"
     };
     private static GoalFragment inst;
     int curNumberLevel=0,goal=1;
@@ -80,7 +82,7 @@ public class GoalFragment extends BaseFragment implements GoalFragmentVP.View, B
         String percent=String.valueOf(curNumberLevel)+"/"+String.valueOf(goal)+"\n";
 
         progressBar =(ProgressBar) rootView.findViewById(R.id.progress_bar);
-        
+
         if (curNumberLevel == 0)
         {
             progressBar.setSecondaryProgressTintList(ColorStateList.valueOf(getResources().getColor(R.color.bg_row_background)));
@@ -89,15 +91,31 @@ public class GoalFragment extends BaseFragment implements GoalFragmentVP.View, B
         else {
 
             progressBar.setSecondaryProgressTintList(ColorStateList.valueOf(getResources().getColor(R.color.description)));
-            if (curNumberLevel < goal / 4)
+            if (curNumberLevel <= goal / 4)
             {
                 progressBar.setProgressTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange)));
                 percent=percent+decription[1];
             }
             else
-            {
-                progressBar.setProgressTintList(ColorStateList.valueOf(getResources().getColor(R.color.blueAmber)));
-                percent=percent+decription[2];
+            {   if(curNumberLevel < goal / 2)
+                {
+                    progressBar.setProgressTintList(ColorStateList.valueOf(getResources().getColor(R.color.orange)));
+                    percent=percent+decription[5];
+                }
+                else {
+
+
+                    progressBar.setProgressTintList(ColorStateList.valueOf(getResources().getColor(R.color.blueAmber)));
+                    if(curNumberLevel==goal)
+                    {
+                        percent=percent+decription[3];
+                    }
+                    else
+                    {
+                        percent=percent+decription[2];
+                    }
+                }
+
             }
         }
         progressBar.setMax(goal);

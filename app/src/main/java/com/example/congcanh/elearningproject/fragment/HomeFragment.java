@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.example.congcanh.elearningproject.R;
@@ -62,11 +63,12 @@ public class HomeFragment extends BaseFragment implements HomeFragmentVP.View,
         super.onStart();
 
         //Nen goi ham tai day de cap nhat lại trang thái khi hoc xong 1 level
-        presenter.loadDataToShow((TopicAdapter) mTopicAdapter);
+        presenter.loadDataToShow((TopicAdapter) mTopicAdapter,getContext());
 
 
-        curNumberLevel=presenter.getCurLevels(getContext());
-        goal=presenter.getGoal(getContext());
+        // curNumberLevel=presenter.getCurLevels(getContext());
+
+        // goal=presenter.getGoal(getContext());
 
     }
 
