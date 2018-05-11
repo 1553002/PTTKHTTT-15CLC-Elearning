@@ -4,6 +4,7 @@ package com.example.congcanh.elearningproject.adapter;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -123,6 +124,9 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHol
         public void renderUi(int position, TopicEntity item) {
             this.position = position;
             this.item = item;
+
+            Log.d("renderUi", item.toString());
+
             topicTitle.setText(item.getName());
             progressBar.setMax(context.getResources().getInteger(R.integer.MAX_LEVEL));
             progressBar.setProgress(item.getCurrent_level());

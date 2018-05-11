@@ -108,17 +108,17 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.WordAdapterVie
             markWord = (Button)itemView.findViewById(R.id.btn_mark_it);
             cancleMark = (Button)itemView.findViewById(R.id.btn_cancle_mark_it);
 
-//            cancleMark.setOnClickListener(v->{
-//                mListener.onCancleButtonClick(this, getAdapterPosition());
-//            });
-//
-//            markWord.setOnClickListener(v->{
-//                mListener.onLeftButtonClick(this, getAdapterPosition());
-//            });
-//
-//            nextButton.setOnClickListener(v->{
-//                mListener.onRightButtonClick(this, getAdapterPosition());
-//            });
+            cancleMark.setOnClickListener(v->{
+                mListener.onCancleButtonClick(this, getAdapterPosition());
+            });
+
+            markWord.setOnClickListener(v->{
+                mListener.onLeftButtonClick(this, getAdapterPosition());
+            });
+
+            nextButton.setOnClickListener(v->{
+                mListener.onRightButtonClick(this, getAdapterPosition());
+            });
 
             this.context = itemView.getContext();
             this.mAdapter = adapter;

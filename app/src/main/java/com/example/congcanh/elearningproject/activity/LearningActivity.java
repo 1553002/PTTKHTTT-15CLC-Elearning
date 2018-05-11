@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 
 import com.example.congcanh.elearningproject.R;
@@ -99,6 +100,8 @@ public class LearningActivity extends BaseActivity implements LearningActivityVP
 
     @Override
     public void onRightButtonClick(RecyclerView.ViewHolder vh, int position) {
+//        Toast.makeText(this, "Click",
+//                Toast.LENGTH_LONG).show();
         if (position == 9)
         {
             AlertDialog.Builder builder1 = new AlertDialog.Builder(LearningActivity.this);

@@ -15,14 +15,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "15393930082-8v7qnvj220v6dgmbfb595hv4n9g4t2hg.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.congcanh.elearning",
-            "certificate_hash": "8442bd3ebd34d59f7888f036ad4def7dd04e5af9"
-          }
-        },
-        {
           "client_id": "15393930082-08kgkf51cqfd0rd3l2ohok9m1oj9ov3d.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -37,13 +29,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "15393930082-08kgkf51cqfd0rd3l2ohok9m1oj9ov3d.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2
